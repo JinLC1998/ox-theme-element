@@ -1,12 +1,14 @@
 import Vue from 'vue';
 import App from './App.vue';
-import router from './router';
-import store from './store';
+import { Button } from 'element-ui';
+import RSButton from './lib/RSButton';
+
+Vue.use(Button)
+
+Vue.component('rs-button', RSButton)
 
 Vue.config.productionTip = false;
 
 new Vue({
-  router,
-  store,
   render: (h) => h(App),
 }).$mount('#app');
