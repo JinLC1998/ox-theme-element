@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "clean": "rimraf -fr lib",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "npm run clean && babel src/lib --out-dir lib --extensions .ts,.js,.tsx --ignore src/lib/styles --copy-files && tsc --project tsconfig.json",
+    "watch": "npm run clean && tsc --project tsconfig.json && babel src/lib --watch --out-dir lib --extensions .ts,.js,.tsx --ignore src/lib/styles --copy-files",
     "lint": "vue-cli-service lint"
   },
+  "main": "lib/index.js",
   "dependencies": {
     "core-js": "^3.6.5",
     "element-ui": "^2.15.10",
@@ -17,6 +20,13 @@
     "vuex": "^3.4.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.2",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-decorators": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.10.4",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
     "@vue/cli-plugin-babel": "~4.5.13",
     "@vue/cli-plugin-router": "~4.5.13",
     "@vue/cli-plugin-typescript": "~4.5.13",

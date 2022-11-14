@@ -1,5 +1,5 @@
 import { Vue, Component, Prop } from 'vue-property-decorator'
-import './button.less'
+import '../styles/button.less'
 
 @Component
 export default class RSButton extends Vue {
