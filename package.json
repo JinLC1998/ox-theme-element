@@ -1,7 +1,6 @@
 {
   "name": "ox-theme-element",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "clean": "rimraf -fr lib",
     "serve": "vue-cli-service serve",
