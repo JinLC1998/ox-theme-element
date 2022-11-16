@@ -1,5 +1,5 @@
 {
-  "name": "ox-theme-element",
+  "name": "@netm/ox-theme-element",
   "version": "0.1.0",
   "scripts": {
     "clean": "rimraf -fr lib",
