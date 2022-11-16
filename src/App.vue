@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <rs-button type="cancel" @click="test">按钮</rs-button>
+    <rs-button type="cancel" @click="clickButton">按钮</rs-button>
+    <rs-table></rs-table>
   </div>
 </template>
 
@@ -13,8 +14,8 @@ import { Vue, Component} from 'vue-property-decorator'
 
 @Component
 export default class App extends Vue {
-  private test() {
-    console.log('121212')
+  private clickButton(e: any) {
+    console.log('按钮被点击了', e)
   }
 }
 </script>

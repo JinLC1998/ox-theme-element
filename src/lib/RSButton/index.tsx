@@ -1,4 +1,4 @@
-import { Vue, Component, Prop } from 'vue-property-decorator'
+import { Vue, Component, Prop, Emit } from 'vue-property-decorator'
 import '../styles/button.less'
 
 @Component
@@ -21,6 +21,11 @@ export default class RSButton extends Vue {
   })
   private height!: Number
 
+  @Emit('click')
+  onClick(e: any) {
+    return e
+  }
+
   get styleClass() {
     return `rs-button ${ this.type ? `rs-button-${ this.type }` : '' }`
   }
@@ -33,6 +38,7 @@ export default class RSButton extends Vue {
   private render() {
     let slotDom = this.$slots.default
     return <el-button class={this.styleClass}
-      style={this.sizeStyle}>{ slotDom }</el-button>
+      style={this.sizeStyle}
+      onClick={this.onClick}>{ slotDom }</el-button>
   }
 }
